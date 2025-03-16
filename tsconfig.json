@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+    "target": "ES6",
+    "module": "ESNext",
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+        "@shared/*": ["src/shared/*"],
+        "@home/*": ["src/pages/Home/*"]
+    }
+},
+    "include": ["src"]
+}
