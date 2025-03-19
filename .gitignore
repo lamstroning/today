@@ -1,50 +1,50 @@
-### Node.js / npm
+#### Node.js / npm
 node_modules/
-npm-debug.log
-yarn.lock
+#npm-debug.log
+#yarn.lock
 package-lock.json
-
-### Build / Dist
+#
+#### Build / Dist
 build/
 dist/
-.next/
-out/
-
-### Webpack / Babel
-.cache/
-.babelrc.js
-.eslintcache
-
-### React / Vite / Next.js
-.vite/
-.vercel/
-.netlify/
-
-### Env files
-.env
-.env.local
-.env.development
-.env.production
-.env.test
-
-### Logs
-logs/
-*.log
-
-### Editor / OS files
+#.next/
+#out/
+#
+#### Webpack / Babel
+#.cache/
+#.babelrc.js
+#.eslintcache
+#
+#### React / Vite / Next.js
+#.vite/
+#.vercel/
+#.netlify/
+#
+#### Env files
+#.env
+#.env.local
+#.env.development
+#.env.production
+#.env.test
+#
+#### Logs
+#logs/
+#*.log
+#
+#### Editor / OS files
 .DS_Store
 .vscode/
 .idea/
-Thumbs.db
-
-### Git / Coverage
-.git/
-.gitignore
-coverage/
-
-### Temporary files
-*.swp
-*.swo
-*.swn
-*.tmp
-*.bak
+#Thumbs.db
+#
+#### Git / Coverage
+#.git/
+#.gitignore
+#coverage/
+#
+#### Temporary files
+#*.swp
+#*.swo
+#*.swn
+#*.tmp
+#*.bak
