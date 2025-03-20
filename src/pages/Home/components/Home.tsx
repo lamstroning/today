@@ -1,28 +1,75 @@
-import { Button, Card, Image, Text } from '@chakra-ui/react'
+'use client'
 
-const Home = () => {
+import { Flex, Container, Link, Button, Card, List } from '@chakra-ui/react'
+
+const Navbar = () => {
   return (
-    <Card.Root maxW="sm" overflow="hidden">
-      <Image
-        src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
-        alt="Green double couch with wooden legs"
-      />
-      <Card.Body gap="2">
-        <Card.Title>Living room Sofa</Card.Title>
-        <Card.Description>
-          This sofa is perfect for modern tropical spaces, baroque inspired
-          spaces.
-        </Card.Description>
-        <Text textStyle="2xl" fontWeight="medium" letterSpacing="tight" mt="2">
-          $450
-        </Text>
-      </Card.Body>
-      <Card.Footer gap="2">
-        <Button variant="solid">Buy now</Button>
-        <Button variant="ghost">Add to cart</Button>
-      </Card.Footer>
-    </Card.Root>
+    <Flex flexDirection="row" justifyContent="space-between" py={10} px={10} bg="white" color="grey">
+      <Container component="left-menu" width="1/5" px={1}>
+        <Container component="Logo" px={"5rem"}>
+          <Link href="/" color="black" >Today</Link>
+        </Container>
+        <Container component="left-menu-links" width="4/5" py={'2rem'}>
+          <Flex direction="column">
+            <Button variant="light">Dashbord</Button>
+            <Button variant="light">ToDo</Button>
+            <Button variant="light">Finance</Button>
+            <Button variant="light">Games</Button>
+          </Flex>
+        </Container>
+      </Container>
+
+      <Container component="main-menu">
+        <Flex flexDirection="row" justifyContent="space-between">
+          <Container component="main-menu-name-page">
+            Dashboard
+          </Container>
+          <Container component="main-menu-buttons">
+            <Button variant="light">Sign in</Button>
+            <Button variant="light">Log in</Button>
+            <Button variant="light">Settings</Button>
+            <Button variant="light">Notifications</Button>
+          </Container>
+        </Flex>
+
+        <Flex flexDirection="row" justify-content="flex-end">
+          <Container component="main-menu-stats" py='2rem'>
+            <Card.Root maxW="sm" overflow="hidden">
+              <Card.Body gap="2">
+                <Card.Title>My ToDo stats:</Card.Title>
+                <Card.Description>
+                  <List.Root>
+                    <List.Item>Task created: 10</List.Item>
+                    <List.Item> Task completed: 3</List.Item>
+                    <List.Item>Task in work: 3</List.Item>
+                    <List.Item>Task not started: 4</List.Item>
+                  </List.Root>
+                </Card.Description>
+              </Card.Body>
+            </Card.Root>
+          </Container>
+
+          <Container component="main-menu-stats" py='2rem'>
+            <Card.Root maxW="sm" overflow="hidden">
+              <Card.Body gap="2">
+                <Card.Title>My ToDo stats:</Card.Title>
+                <Card.Description>
+                  <List.Root>
+                    <List.Item>Task created: 10</List.Item>
+                    <List.Item> Task completed: 3</List.Item>
+                    <List.Item>Task in work: 3</List.Item>
+                    <List.Item>Task not started: 4</List.Item>
+                  </List.Root>
+                </Card.Description>
+              </Card.Body>
+            </Card.Root>
+          </Container>
+
+        </Flex>
+
+      </Container>
+    </Flex>
   )
 }
 
-export default Home
+export default Navbar
