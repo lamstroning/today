@@ -10,10 +10,9 @@
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true,
     "paths": {
-        "@shared/*": ["src/shared/*"],
-        "@home/*": ["src/pages/Home/*"]
+        "@shared/*": ["./src/shared/*"],
+        "@home/*": ["./src/pages/Home/*"]
     }
 },
     "include": ["src"]
 }
-\

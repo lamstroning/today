@@ -1,75 +1,40 @@
-'use client'
+'use client';
 
-import { Flex, Container, Link, Button, Card, List } from '@chakra-ui/react'
+import { Flex, Container } from '@chakra-ui/react';
+import AsideMenu from '../../../components/ui/AsideMenu';
+import NavBar from '../../../components/ui/NavBar';
+import Widgets from '../../../components/ui/Widgets';
+
+const MenuButtons = [
+  { name: "Dashboard", url: "/dashboard" },
+  { name: "ToDo", url: "/todo" },
+  { name: "Finance", url: "/finance" },
+  { name: "Games", url: "/games" }
+];
+
+const NavList = [
+  { name: "Sign in", url: "/Sign-in" },
+  { name: "Log in", url: "/Log-in" },
+  { name: "Settings", url: "/Settings" },
+  { name: "Notifications", url: "/Notifications" }
+];
+
+const WidgetsList = [
+  { widgetsName: "Task for you", information: { taskCreated: 5, taskCompleted: 1, taskInWork: 2, taskOpened: 2 } },
+  { widgetsName: "Finance for you", information: { balance: 100, expenses: 10, earnings: 20 } },
+  { widgetsName: "Games for you", information: { bestScore: 50, favoriteGames: "Tik Tak Toe", allPlays: 13 } },
+];
 
 const Navbar = () => {
   return (
     <Flex flexDirection="row" justifyContent="space-between" py={10} px={10} bg="white" color="grey">
-      <Container component="left-menu" width="1/5" px={1}>
-        <Container component="Logo" px={"5rem"}>
-          <Link href="/" color="black" >Today</Link>
-        </Container>
-        <Container component="left-menu-links" width="4/5" py={'2rem'}>
-          <Flex direction="column">
-            <Button variant="light">Dashbord</Button>
-            <Button variant="light">ToDo</Button>
-            <Button variant="light">Finance</Button>
-            <Button variant="light">Games</Button>
-          </Flex>
-        </Container>
-      </Container>
-
-      <Container component="main-menu">
-        <Flex flexDirection="row" justifyContent="space-between">
-          <Container component="main-menu-name-page">
-            Dashboard
-          </Container>
-          <Container component="main-menu-buttons">
-            <Button variant="light">Sign in</Button>
-            <Button variant="light">Log in</Button>
-            <Button variant="light">Settings</Button>
-            <Button variant="light">Notifications</Button>
-          </Container>
-        </Flex>
-
-        <Flex flexDirection="row" justify-content="flex-end">
-          <Container component="main-menu-stats" py='2rem'>
-            <Card.Root maxW="sm" overflow="hidden">
-              <Card.Body gap="2">
-                <Card.Title>My ToDo stats:</Card.Title>
-                <Card.Description>
-                  <List.Root>
-                    <List.Item>Task created: 10</List.Item>
-                    <List.Item> Task completed: 3</List.Item>
-                    <List.Item>Task in work: 3</List.Item>
-                    <List.Item>Task not started: 4</List.Item>
-                  </List.Root>
-                </Card.Description>
-              </Card.Body>
-            </Card.Root>
-          </Container>
-
-          <Container component="main-menu-stats" py='2rem'>
-            <Card.Root maxW="sm" overflow="hidden">
-              <Card.Body gap="2">
-                <Card.Title>My ToDo stats:</Card.Title>
-                <Card.Description>
-                  <List.Root>
-                    <List.Item>Task created: 10</List.Item>
-                    <List.Item> Task completed: 3</List.Item>
-                    <List.Item>Task in work: 3</List.Item>
-                    <List.Item>Task not started: 4</List.Item>
-                  </List.Root>
-                </Card.Description>
-              </Card.Body>
-            </Card.Root>
-          </Container>
-
-        </Flex>
-
+      <AsideMenu menuButtons={MenuButtons} />
+      <Container as="main">
+        <NavBar navList={NavList} />
+        <Widgets widgetsList={WidgetsList} />
       </Container>
     </Flex>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
