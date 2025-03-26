@@ -1,4 +1,4 @@
-import { Flex, Container, Card, List, ListItem, CardHeader, CardBody, Heading } from "@chakra-ui/react";
+import { Flex, Container, Card, List, ListItem, Heading } from "@chakra-ui/react";
 
 type Widget = {
   widgetsName: string;
@@ -22,20 +22,20 @@ const Widgets = ({ widgetsList }: WidgetsProps) => {
         {widgetsList.map((item, index) => {
           const info = item.information || {};
           return (
-            <Card key={index} maxW="sm" overflow="hidden" my={4}>
-              <CardHeader>
+            <Card.Root key={index} maxW="sm" overflow="hidden" my={4}>
+              <Card.Header>
                 <Heading size="md">{item.widgetsName}</Heading>
-              </CardHeader>
-              <CardBody>
-                <List>
+              </Card.Header>
+              <Card.Body>
+                <List.Root>
                   {Object.entries(info).map(([key, value]) => (
-                    <ListItem key={key}>
+                    <List.Item key={key}>
                       {key}: {value}
-                    </ListItem>
+                    </List.Item>
                   ))}
-                </List>
-              </CardBody>
-            </Card>
+                </List.Root>
+              </Card.Body>
+            </Card.Root>
           );
         })}
       </Container>
